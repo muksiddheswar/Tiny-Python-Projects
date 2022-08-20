@@ -2,7 +2,8 @@ import pandas as pd
 import eyed3
 from os import listdir, path
 
-p = "D:\Multimedia\MZK\__new_indie_dwn\Indie dwn"
+f = open("music_library_location.txt", "r")
+p = f.read()
 
 dfs = []
 
