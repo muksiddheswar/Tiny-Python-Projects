@@ -1,3 +1,5 @@
 .idea/
 Archive/
 *.mp3
+test.py
+*.csv
