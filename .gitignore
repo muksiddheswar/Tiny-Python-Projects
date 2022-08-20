@@ -3,3 +3,4 @@ Archive/
 *.mp3
 test.py
 *.csv
+music_library_location.txt
