@@ -1,3 +1,5 @@
+# Read all .mp3 files in a location and creates a csv file of the id3 metadata.
+
 import pandas as pd
 import eyed3
 from os import listdir, path
@@ -8,7 +10,7 @@ p = f.read()
 dfs = []
 
 for f in listdir(p):
-    if path.isfile(path.join(p, f)):
+    if path.isfile(path.join(p, f)) and (f[-4:]).lower() == ".mp3":
         audiofile = eyed3.load(path.join(p, f))
 
         simple_list = [f,
@@ -24,14 +26,4 @@ for f in listdir(p):
 
 cols = ['Filename', 'Title', 'Artist', 'Album', 'Album_Artist', 'Composer', 'Publisher', 'Genre']
 df = pd.DataFrame(dfs, columns=cols)
-
 df.to_csv('out.csv')
-
-
-"""
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.width', None)
-pd.set_option('display.max_colwidth', -1)
-print(df)
-"""
