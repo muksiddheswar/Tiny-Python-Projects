@@ -1,6 +1,6 @@
 .idea/
 Archive/
 *.mp3
-test.py
+file_manipulation/test.py
 *.csv
 music_library_location.txt
